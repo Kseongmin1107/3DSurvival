@@ -1836,6 +1836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiCondition: {fileID: 0}
   noHungerHealthDecay: 2
+  speedMultiplier: 1
 --- !u!114 &685542313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3502,7 +3503,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Health
 
-    Hunger'
+    Hunger
+
+    Spd'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c33818b4f1c02884495d3c3785f09faf, type: 2}
   m_sharedMaterial: {fileID: -4929630878921602193, guid: c33818b4f1c02884495d3c3785f09faf, type: 2}
@@ -3529,12 +3532,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
+  m_fontSize: 24
   m_fontSizeBase: 28
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 21
+  m_fontSizeMax: 24
   m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -3547,7 +3550,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -3638,7 +3641,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: '10
 
-    10'
+    10
+
+    1.5'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c33818b4f1c02884495d3c3785f09faf, type: 2}
   m_sharedMaterial: {fileID: -4929630878921602193, guid: c33818b4f1c02884495d3c3785f09faf, type: 2}
@@ -3665,8 +3670,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 21
+  m_fontSizeBase: 21
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
