@@ -24,10 +24,12 @@ public class PlayerController : MonoBehaviour
     public bool canLook = true;
 
     private Rigidbody rigidbody;
+    private PlayerCondition condition;
 
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
+        condition = GetComponent<PlayerCondition>();
     }
 
     void Start()
@@ -76,7 +78,7 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         Vector3 dir = transform.forward * curMovementInput.y + transform.right * curMovementInput.x;
-        dir *= moveSpeed;
+        dir *= moveSpeed * condition.speedMultiplier;
         dir.y = rigidbody.velocity.y;
 
         rigidbody.velocity = dir;

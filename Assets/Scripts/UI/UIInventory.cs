@@ -174,6 +174,7 @@ public class UIInventory : MonoBehaviour
 
         for (int i = 0; i < selectedItem.item.consumables.Length; i++)
         {
+
             selectedItemStatName.text += selectedItem.item.consumables[i].type.ToString() + "\n";
             selectedItemStatValue.text += selectedItem.item.consumables[i].value.ToString() + "\n";
         }
@@ -196,6 +197,9 @@ public class UIInventory : MonoBehaviour
                         condition.Heal(selectedItem.item.consumables[i].value); break;
                     case ConsumableType.Hunger:
                         condition.Eat(selectedItem.item.consumables[i].value); break;
+                    case ConsumableType.SpeedBoost:
+                        StartCoroutine(condition.SpeedBoost(selectedItem.item.consumables[i].duration, selectedItem.item.consumables[i].value));
+                        break;
                 }
             }
             RemoveSelctedItem();

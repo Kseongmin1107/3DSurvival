@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-
+using System.Collections;
 
 public interface IDamagable
 {
@@ -18,6 +18,8 @@ public class PlayerCondition : MonoBehaviour , IDamagable
 
     public float noHungerHealthDecay;
     public event Action onTakeDamage;
+
+    public float speedMultiplier = 1f;
 
     private void Update()
     {
@@ -43,6 +45,15 @@ public class PlayerCondition : MonoBehaviour , IDamagable
     public void Eat(float amount)
     {
         hunger.Add(amount);
+    }
+
+    public IEnumerator SpeedBoost(float duration, float multiplier)
+    {
+        speedMultiplier = multiplier;
+
+        yield return new WaitForSeconds(duration);
+
+        speedMultiplier = 1f;
     }
 
     public void Die()
