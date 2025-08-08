@@ -68,6 +68,7 @@ public class NPC : MonoBehaviour , IDamagable
                 PassiveUpdate();
                 break;
             case AIState.Attacking:
+                AttackingUpdate();
                 break;
         }
     }
@@ -182,7 +183,7 @@ public class NPC : MonoBehaviour , IDamagable
 
     public void TakePhysicalDamage(int damageAmount)
     {
-        health -= damage;
+        health -= damageAmount;
         if(health <= 0)
         {
             Die();
