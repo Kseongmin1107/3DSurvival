@@ -1800,6 +1800,7 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 55
+  jumpStaminaCost: 10
   cameraContainer: {fileID: 1705592480}
   minXLook: -65
   maxXLook: 65
