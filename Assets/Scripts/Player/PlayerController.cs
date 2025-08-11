@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour
     public float jumpPower;
     public LayerMask groundLayerMask;
 
+    [Header("Stamina")] 
+    public float jumpStaminaCost = 10f;
+
+
     [Header("Look")]
     public Transform cameraContainer;
     public float minXLook;
@@ -71,7 +75,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started && IsGrounded())
         {
-            if (condition.UseStamina(10f))
+            if (condition.UseStamina(jumpStaminaCost))
             {
                 rigidbody.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
             }
