@@ -67,11 +67,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnJumpInput(InputAction.CallbackContext context)
+  public void OnJumpInput(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Started && IsGrounded())
         {
-            rigidbody.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
+            if (condition.UseStamina(10f))
+            {
+                rigidbody.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
+            }
         }
     }
 
