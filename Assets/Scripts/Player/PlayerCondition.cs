@@ -10,6 +10,11 @@ public interface IDamagable
 
 public class PlayerCondition : MonoBehaviour , IDamagable
 {
+    [Header("Stamina")]
+    public float jumpStaminaCost = 10f;
+    public float dashStaminaCost = 25f;
+
+
     public UICondition uiCondition;
 
     Condition health { get { return uiCondition.health; } }

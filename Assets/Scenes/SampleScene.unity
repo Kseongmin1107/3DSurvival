@@ -1778,6 +1778,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 6206fe54-ee0d-4d06-bda3-07ba6fee2aac
     m_ActionName: Player/Attack[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 685542310}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnDashInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ca3bbc97-620c-44f7-814a-a9ace9c519bb
+    m_ActionName: Player/Dash[/Keyboard/leftShift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1800,7 +1816,8 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 55
-  jumpStaminaCost: 10
+  dashDuration: 1
+  dashMultiplier: 2.5
   cameraContainer: {fileID: 1705592480}
   minXLook: -65
   maxXLook: 65
@@ -1835,6 +1852,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba208a6c725947d41837590f98977ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpStaminaCost: 10
+  dashStaminaCost: 25
   uiCondition: {fileID: 0}
   noHungerHealthDecay: 2
   speedMultiplier: 1

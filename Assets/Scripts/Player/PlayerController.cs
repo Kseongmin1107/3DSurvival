@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,8 +11,12 @@ public class PlayerController : MonoBehaviour
     public float jumpPower;
     public LayerMask groundLayerMask;
 
-    [Header("Stamina")] 
-    public float jumpStaminaCost = 10f;
+    [Header("Dash")]
+    public float dashDuration;
+    public float dashMultiplier = 2f;
+    private bool isDashing = false;
+
+
 
 
     [Header("Look")]
@@ -71,15 +76,42 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-  public void OnJumpInput(InputAction.CallbackContext context)
+    public void OnJumpInput(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Started && IsGrounded())
         {
-            if (condition.UseStamina(jumpStaminaCost))
+            if (condition.UseStamina(condition.jumpStaminaCost))
             {
                 rigidbody.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
             }
         }
+    }
+
+    public void OnDashInput(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started && !isDashing)
+        {
+            if (condition.UseStamina(condition.dashStaminaCost))
+            {
+                StartCoroutine(DashCoroutine());
+            }
+        }
+    }
+
+    private IEnumerator DashCoroutine()
+    {
+        isDashing = true;
+
+        condition.speedMultiplier = dashMultiplier;
+
+        rigidbody.useGravity = false;
+
+        yield return new WaitForSeconds(dashDuration);
+
+        isDashing = false;
+        rigidbody.useGravity = true;
+
+        condition.speedMultiplier = 1f;
     }
 
     private void Move()
