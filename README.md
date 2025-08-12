@@ -6,7 +6,7 @@
 ### 1. 구현된 핵심 기능
 
 
-### 1.1 기본 이동 및 점프 시스템 🏃‍♂️
+### 1.1 기본 이동 및 점프,대시 시스템 🏃‍♂️
 
 -   **이동**: `PlayerController.cs` 스크립트에서 `OnMoveInput` 함수를 통해 `Input System`의 입력 값을 받고, `FixedUpdate`의 `Move()` 함수를 통해 `Rigidbody`의 `velocity`를 직접 제어해 플레이어를 이동시켰습니다.
     
