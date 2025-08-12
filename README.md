@@ -68,6 +68,3 @@
 
 ----------
 
-### 시연 영상 🎞️
-
-![ezgif com-animated-gif-maker (1)](https://github.com/user-attachments/assets/d7da261b-e611-4146-bfdd-1b771a7175f8)
